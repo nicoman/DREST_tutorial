@@ -9,6 +9,7 @@ class SnippetSerializer(serializers.ModelSerializer):
     # The sourceargument controls which attribute is used to populate a field
     # and can point any attribute on the serialized instance
     owner = serializers.ReadOnlyField(source='owner.username')
+
     class Meta:
         model = Snippet
         fields = ('id', 'title', 'code', 'linenos', 'language', 'style', 'owner')
